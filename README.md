@@ -1,8 +1,8 @@
 # Nightshift
 
-**Find a moving asteroid in telescope noise.** Nightshift is a browser-based experiment and six-screen presentation built for Max’s solo SoTA Scientific Parallelism Hackathon entry. Rotate a 3D stack of simulated exposures, align it by hand, then run a blind search over possible asteroid paths on WebGPU or a serial CPU. [Hackathon brief](https://luma.com/scientific-parallelism)
+**Find a moving asteroid in telescope noise.** Nightshift is an interactive demo of synthetic tracking. Rotate a 3D stack of simulated telescope exposures, align them by hand, then run a blind search over possible asteroid paths with WebGPU or a serial CPU.
 
-[Open the live presentation](https://nightshift-orpin-six.vercel.app)
+**[Open Nightshift on Vercel](https://nightshift-orpin-six.vercel.app)**
 
 ## What the demo finds
 
