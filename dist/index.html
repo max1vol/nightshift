@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0c1018">
+  <meta name="description" content="A live parallel search for a faint moving object. An interactive planetary-defense presentation for the SoTA Scientific Parallelism Hackathon.">
+  <title>Nightshift — Find the faint ones</title>
+  <link rel="icon" href="mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="nightshift.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#mission" aria-label="Nightshift mission"><span class="brand-mark" aria-hidden="true"></span>NIGHTSHIFT</a>
+    <span class="venue">SoTA Scientific Parallelism Hackathon</span>
+    <div class="header-actions">
+      <button id="notes-btn" class="quiet text-btn" type="button">Speaker notes</button>
+      <button id="present-btn" class="quiet present-btn" type="button"><span class="fullscreen-icon" aria-hidden="true"></span><span id="present-label">Present</span></button>
+    </div>
+  </header>
+  <main class="deck" id="deck">
+    <div class="split" id="split">
+      <section class="slide" id="slide" aria-labelledby="slide-title"></section>
+      <section class="stage" id="stage" aria-label="Interactive synthetic tracking visualization">
+        <canvas id="sky" role="group" tabindex="0" aria-label="Three-dimensional view of time-separated synthetic telescope exposures" aria-describedby="stage-hint" aria-keyshortcuts="ArrowLeft ArrowRight ArrowUp ArrowDown Home"></canvas>
+        <div class="stage-grid" aria-hidden="true"></div>
+        <div class="stage-top">
+          <div><span class="stage-icon" aria-hidden="true"></span><span id="stage-title">Exposure volume</span></div>
+          <span id="stage-tag">SYNTHETIC SKY</span>
+        </div>
+        <div id="stage-content" class="stage-content"></div>
+        <div class="stage-bottom">
+          <div id="stage-legend"></div>
+          <div class="stage-actions"><span id="stage-hint">Drag to orbit</span><button type="button" id="reset-view" class="reset-view" title="Reset camera" aria-label="Reset camera">↺</button></div>
+        </div>
+      </section>
+    </div>
+    <nav class="deck-nav" aria-label="Presentation slides">
+      <div class="counter"><strong id="current-slide">01</strong><span> / 06</span></div>
+      <div class="chapters" id="chapters"></div>
+      <div class="nav-buttons">
+        <button id="prev" type="button" class="nav-btn" aria-label="Previous slide" title="Previous slide"><span class="chevron left" aria-hidden="true"></span></button>
+        <button id="next" type="button" class="nav-btn next" aria-label="Next slide" title="Next slide"><span class="chevron" aria-hidden="true"></span></button>
+      </div>
+    </nav>
+    <footer class="site-footer"><span>Max <span class="footer-dot">·</span> Solo presentation</span><span class="keys"><kbd>←</kbd> <kbd>→</kbd> Navigate <span class="footer-dot">·</span> <kbd>F</kbd> Fullscreen</span><button id="sources-btn" class="text-btn" type="button">Sources &amp; methods</button></footer>
+  </main>
+  <dialog id="dialog" aria-labelledby="dialog-title">
+    <div class="dialog-head"><h2 id="dialog-title"></h2><form method="dialog"><button class="quiet close" aria-label="Close dialog">×</button></form></div>
+    <div id="dialog-body"></div>
+  </dialog>
+  <noscript>This presentation needs JavaScript to render the sky and run the live search.</noscript>
+  <script type="module" src="nightshift.mjs"></script>
+</body>
+</html>
